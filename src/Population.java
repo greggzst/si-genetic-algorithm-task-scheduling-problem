@@ -12,17 +12,19 @@ import java.util.Random;
  */
 public class Population {
     private Schedule[] individuals;
+    private int[] individualDuration;
     private MSRCPSPIO reader = new MSRCPSPIO();
 
     //constructor for creating population of a given size and using given def file
     public Population(int popSize, String fileName){
         individuals = new Schedule[popSize];
+        individualDuration = new int[popSize];
         for(int i = 0; i < individuals.length; i++){
             individuals[i] = reader.readDefinition(fileName);
         }
     }
 
-    //initializing population at random
+    //initializing population at random and setting task times
     private void initializeRandomPopulation(){
         for(Schedule ind : individuals){
             initializeRandomIndividual(ind);
