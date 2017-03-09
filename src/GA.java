@@ -1,4 +1,5 @@
 import msrcpsp.scheduling.Schedule;
+import msrcpsp.scheduling.Task;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,7 @@ public class GA {
         Schedule[] individuals = population.getIndividuals();
         double[] fitnesses = population.getIndividualFitnesses();
         Random random = new Random();
+
         for(int i = 0; i < populationSize; i++){
             if(random.nextDouble() >= fitnesses[i]){
                 schedule = individuals[i];
@@ -36,6 +38,24 @@ public class GA {
     }
 
     public Schedule crossover(Schedule firstParent, Schedule secondParent){
+        Task[] firstParentTasks = firstParent.getTasks();
+        Task[] secondParentTasks = secondParent.getTasks();
 
+
+
+        return null;
+    }
+
+    private int crossoverThreshold(int numberOfTasks){
+        Random random = new Random();
+        int threshold = 0;
+        for (int i = 0; i < numberOfTasks; i++){
+            if(random.nextDouble() > crossoverRate){
+                threshold = i;
+                break;
+            }
+        }
+
+        return threshold;
     }
 }
