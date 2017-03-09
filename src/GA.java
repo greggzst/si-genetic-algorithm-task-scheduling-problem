@@ -46,16 +46,16 @@ public class GA {
         return null;
     }
 
-    private int crossoverThreshold(int numberOfTasks){
+    private int crossoverPoint(int numberOfTasks){
         Random random = new Random();
-        int threshold = 0;
+        int point = 0;
         for (int i = 0; i < numberOfTasks; i++){
             if(random.nextDouble() > crossoverRate){
-                threshold = i;
+                point = i;
                 break;
             }
         }
 
-        return threshold;
+        return point;
     }
 }
