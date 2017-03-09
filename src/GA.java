@@ -37,14 +37,25 @@ public class GA {
         return schedule;
     }
 
-    public Schedule crossover(Schedule firstParent, Schedule secondParent){
+    public void crossover(Schedule firstParent, Schedule secondParent){
         Task[] firstParentTasks = firstParent.getTasks();
         Task[] secondParentTasks = secondParent.getTasks();
 
         int crossoverPoint = crossoverPoint(firstParentTasks.length);
+        List<Task> firstParentBefore = getTasksBeforeCrossoverPoint(firstParentTasks,crossoverPoint);
+        List<Task> firstParentAfter = getTasksAfterCrossoverPoint(firstParentTasks,crossoverPoint);
+        List<Task> secondParentBefore = getTasksBeforeCrossoverPoint(secondParentTasks,crossoverPoint);
+        List<Task> secondParentAfter = getTasksAfterCrossoverPoint(secondParentTasks,crossoverPoint);
 
+        firstParentBefore.addAll(secondParentAfter);
+        secondParentBefore.addAll(firstParentAfter);
 
-        return null;
+        Task[] firstAfterCrossover = (Task[]) firstParentBefore.toArray();
+        Task[] secondAfterCrossover = (Task[]) secondParentBefore.toArray();
+
+        firstParent.setTasks(firstAfterCrossover);
+        secondParent.setTasks(secondAfterCrossover);
+        
     }
 
     private int crossoverPoint(int numberOfTasks){
