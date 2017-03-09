@@ -41,6 +41,7 @@ public class GA {
         Task[] firstParentTasks = firstParent.getTasks();
         Task[] secondParentTasks = secondParent.getTasks();
 
+        int crossoverPoint = crossoverPoint(firstParentTasks.length);
 
 
         return null;
@@ -57,5 +58,21 @@ public class GA {
         }
 
         return point;
+    }
+
+    private List<Task> getTasksBeforeCrossoverPoint(Task[] tasks,int crossoverPoint){
+        List<Task> tasksBefore = new ArrayList<>();
+        for(int i = 0; i <= crossoverPoint; i++){
+            tasksBefore.add(tasks[i]);
+        }
+        return tasksBefore;
+    }
+
+    private List<Task> getTasksAfterCrossoverPoint(Task[] tasks, int crossoverPoint){
+        List<Task> tasksAfter = new ArrayList<>();
+        for(int i = crossoverPoint; i < tasks.length; i++){
+            tasksAfter.add(tasks[i]);
+        }
+        return  tasksAfter;
     }
 }
