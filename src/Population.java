@@ -1,3 +1,6 @@
+import msrcpsp.evaluation.BaseEvaluator;
+import msrcpsp.evaluation.DurationEvaluator;
+import msrcpsp.evaluation.EvaluatorType;
 import msrcpsp.io.MSRCPSPIO;
 import msrcpsp.scheduling.BaseIndividual;
 import msrcpsp.scheduling.Resource;
@@ -20,8 +23,9 @@ public class Population {
     public Population(int popSize, String fileName){
         individuals = new Schedule[popSize];
         individualDuration = new int[popSize];
-        for(int i = 0; i < individuals.length; i++){
+        for(int i = 0; i < individuals.length; i++) {
             individuals[i] = reader.readDefinition(fileName);
+            individuals[i].setEvaluator(new DurationEvaluator(individuals[i]));
         }
     }
     //population from schedule array
