@@ -1,4 +1,5 @@
 import msrcpsp.io.MSRCPSPIO;
+import msrcpsp.scheduling.BaseIndividual;
 import msrcpsp.scheduling.Resource;
 import msrcpsp.scheduling.Schedule;
 import msrcpsp.scheduling.Task;
@@ -47,5 +48,12 @@ public class Population {
     private void initializeTaskTime(Schedule schedule){
         Greedy greedy = new Greedy(schedule.getSuccesors());
         greedy.buildTimestamps(schedule);
+    }
+
+    //calcualte duration for individual schedule using BaseIndividual
+    private int calculateIndividualDuration(Schedule schedule){
+        BaseIndividual baseIndividual = new BaseIndividual(schedule, schedule.getEvaluator());
+        baseIndividual.setDurationAndCost();
+        return baseIndividual.getDuration();
     }
 }
