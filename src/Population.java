@@ -1,6 +1,4 @@
-import msrcpsp.evaluation.BaseEvaluator;
 import msrcpsp.evaluation.DurationEvaluator;
-import msrcpsp.evaluation.EvaluatorType;
 import msrcpsp.io.MSRCPSPIO;
 import msrcpsp.scheduling.BaseIndividual;
 import msrcpsp.scheduling.Resource;
@@ -16,15 +14,15 @@ import java.util.Random;
  */
 public class Population {
     private Schedule[] individuals;
-    private int[] individualDuration;
-    private double[] individualFitness;
+    private int[] individualDurations;
+    private double[] individualFitnesses;
     private MSRCPSPIO reader = new MSRCPSPIO();
 
     //constructor for creating population of a given size and using given def file
     public Population(int popSize, String fileName){
         individuals = new Schedule[popSize];
-        individualDuration = new int[popSize];
-        individualFitness = new double[popSize];
+        individualDurations = new int[popSize];
+        individualFitnesses = new double[popSize];
         for(int i = 0; i < individuals.length; i++) {
             individuals[i] = reader.readDefinition(fileName);
             individuals[i].setEvaluator(new DurationEvaluator(individuals[i]));
@@ -33,9 +31,9 @@ public class Population {
     //population from schedule array
     public Population(Schedule[] schedules){
         this.individuals = schedules;
-        this.individualDuration = new int[individuals.length];
+        this.individualDurations = new int[individuals.length];
         for (int i = 0; i < individuals.length; i++){
-            individualDuration[i] = calculateIndividualDuration(individuals[i]);
+            individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
     }
 
@@ -44,7 +42,7 @@ public class Population {
         for(int i = 0; i < individuals.length; i++){
             initializeRandomIndividual(individuals[i]);
             initializeTaskTime(individuals[i]);
-            individualDuration[i] = calculateIndividualDuration(individuals[i]);
+            individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
         calculateFitnesses();
     }
@@ -77,24 +75,24 @@ public class Population {
         return individuals;
     }
 
-    public int[] getIndividualDuration(){
-        return individualDuration;
+    public int[] getIndividualDurations(){
+        return individualDurations;
     }
 
-    public double[] getIndividualFitness() { return individualFitness; }
+    public double[] getIndividualFitnesses() { return individualFitnesses; }
 
     public int getSumOfDurations(){
         int sum = 0;
-        for(int i = 0; i < individualDuration.length; i++){
-            sum += individualDuration[i];
+        for(int i = 0; i < individualDurations.length; i++){
+            sum += individualDurations[i];
         }
         return sum;
     }
 
     public void calculateFitnesses(){
         int sumOfDurations = getSumOfDurations();
-        for (int i = 0; i < individualDuration.length; i++){
-            individualFitness[i] = (double) individualDuration[i] / sumOfDurations;
+        for (int i = 0; i < individualDurations.length; i++){
+            individualFitnesses[i] = (double) individualDurations[i] / sumOfDurations;
         }
     }
 }
