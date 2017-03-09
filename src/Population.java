@@ -81,6 +81,8 @@ public class Population {
         return individualDuration;
     }
 
+    public double[] getIndividualFitness() { return individualFitness; }
+
     public int getSumOfDurations(){
         int sum = 0;
         for(int i = 0; i < individualDuration.length; i++){
