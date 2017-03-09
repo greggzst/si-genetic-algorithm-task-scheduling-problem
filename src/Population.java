@@ -17,14 +17,14 @@ import java.util.Random;
 public class Population {
     private Schedule[] individuals;
     private int[] individualDuration;
-    private int[] individualFitness;
+    private double[] individualFitness;
     private MSRCPSPIO reader = new MSRCPSPIO();
 
     //constructor for creating population of a given size and using given def file
     public Population(int popSize, String fileName){
         individuals = new Schedule[popSize];
         individualDuration = new int[popSize];
-        individualFitness = new int[popSize];
+        individualFitness = new double[popSize];
         for(int i = 0; i < individuals.length; i++) {
             individuals[i] = reader.readDefinition(fileName);
             individuals[i].setEvaluator(new DurationEvaluator(individuals[i]));
@@ -86,5 +86,11 @@ public class Population {
             sum += individualDuration[i];
         }
         return sum;
+    }
+
+    public void calculateFitnesses(){
+        for (int i = 0; i < individualDuration.length; i++){
+            individualFitness[i] = individualDuration[i] / getSumOfDurations();
+        }
     }
 }
