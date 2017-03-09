@@ -24,6 +24,14 @@ public class Population {
             individuals[i] = reader.readDefinition(fileName);
         }
     }
+    //population from schedule array
+    public Population(Schedule[] schedules){
+        this.individuals = schedules;
+        this.individualDuration = new int[individuals.length];
+        for (int i = 0; i < individuals.length; i++){
+            individualDuration[i] = calculateIndividualDuration(individuals[i]);
+        }
+    }
 
     //initializing population at random and setting task times
     private void initializeRandomPopulation(){
