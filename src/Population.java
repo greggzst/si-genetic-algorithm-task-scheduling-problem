@@ -65,4 +65,12 @@ public class Population {
         baseIndividual.setDurationAndCost();
         return baseIndividual.getDuration();
     }
+
+    public Schedule[] getIndividuals(){
+        return individuals;
+    }
+
+    public int[] getIndividualDuration(){
+        return individualDuration;
+    }
 }
