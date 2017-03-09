@@ -46,6 +46,7 @@ public class Population {
             initializeTaskTime(individuals[i]);
             individualDuration[i] = calculateIndividualDuration(individuals[i]);
         }
+        calculateFitnesses();
     }
 
     //initializing particular individual taking into account task constraints
@@ -89,8 +90,9 @@ public class Population {
     }
 
     public void calculateFitnesses(){
+        int sumOfDurations = getSumOfDurations();
         for (int i = 0; i < individualDuration.length; i++){
-            individualFitness[i] = individualDuration[i] / getSumOfDurations();
+            individualFitness[i] = (double) individualDuration[i] / sumOfDurations;
         }
     }
 }
