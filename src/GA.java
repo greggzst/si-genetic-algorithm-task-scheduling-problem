@@ -42,20 +42,20 @@ public class GA {
         Task[] secondParentTasks = secondParent.getTasks();
 
         int crossoverPoint = crossoverPoint(firstParentTasks.length);
-        List<Task> firstParentBefore = getTasksBeforeCrossoverPoint(firstParentTasks,crossoverPoint);
-        List<Task> firstParentAfter = getTasksAfterCrossoverPoint(firstParentTasks,crossoverPoint);
-        List<Task> secondParentBefore = getTasksBeforeCrossoverPoint(secondParentTasks,crossoverPoint);
-        List<Task> secondParentAfter = getTasksAfterCrossoverPoint(secondParentTasks,crossoverPoint);
+        List<Task> firstParentTaskBeforeCrossOverPoint = getTasksBeforeCrossoverPoint(firstParentTasks,crossoverPoint);
+        List<Task> firstParentTaskAfterCrossOverPoint = getTasksAfterCrossoverPoint(firstParentTasks,crossoverPoint);
+        List<Task> secondParentTaskBeforeCrossOverPoint = getTasksBeforeCrossoverPoint(secondParentTasks,crossoverPoint);
+        List<Task> secondParentTaskAfterCrossOverPoint = getTasksAfterCrossoverPoint(secondParentTasks,crossoverPoint);
 
-        firstParentBefore.addAll(secondParentAfter);
-        secondParentBefore.addAll(firstParentAfter);
+        firstParentTaskBeforeCrossOverPoint.addAll(secondParentTaskAfterCrossOverPoint);
+        secondParentTaskBeforeCrossOverPoint.addAll(firstParentTaskAfterCrossOverPoint);
 
-        Task[] firstAfterCrossover = (Task[]) firstParentBefore.toArray();
-        Task[] secondAfterCrossover = (Task[]) secondParentBefore.toArray();
+        Task[] firstAfterCrossover = (Task[]) firstParentTaskBeforeCrossOverPoint.toArray();
+        Task[] secondAfterCrossover = (Task[]) secondParentTaskBeforeCrossOverPoint.toArray();
 
         firstParent.setTasks(firstAfterCrossover);
         secondParent.setTasks(secondAfterCrossover);
-        
+
     }
 
     private int crossoverPoint(int numberOfTasks){
