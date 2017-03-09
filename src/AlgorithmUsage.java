@@ -9,6 +9,6 @@ public class AlgorithmUsage {
         Population pop = new Population(100, definitionFile);
         pop.initializeRandomPopulation();
 
-        pop.getIndividualDuration();
+        pop.getIndividualDurations();
     }
 }
