@@ -27,9 +27,10 @@ public class Population {
 
     //initializing population at random and setting task times
     private void initializeRandomPopulation(){
-        for(Schedule ind : individuals){
-            initializeRandomIndividual(ind);
-            initializeTaskTime(ind);
+        for(int i = 0; i < individuals.length; i++){
+            initializeRandomIndividual(individuals[i]);
+            initializeTaskTime(individuals[i]);
+            individualDuration[i] = calculateIndividualDuration(individuals[i]);
         }
     }
 
