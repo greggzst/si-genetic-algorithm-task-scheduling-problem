@@ -2,8 +2,10 @@ import msrcpsp.io.MSRCPSPIO;
 import msrcpsp.scheduling.Resource;
 import msrcpsp.scheduling.Schedule;
 import msrcpsp.scheduling.Task;
+import msrcpsp.scheduling.greedy.Greedy;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by GreggJakubiak on 09.03.2017.
@@ -22,17 +24,26 @@ public class Population {
 
     //initializing population at random
     private void initializeRandomPopulation(){
-        for(int i = 0; i < individuals.length; i++){
-
+        for(Schedule ind : individuals){
+            initializeRandomIndividual(ind);
+            initializeTaskTime(ind);
         }
     }
 
     //initializing particular individual taking into account task constraints
     private void initializeRandomIndividual(Schedule schedule){
         List<Resource> capableResources;
+        Random random = new Random(System.currentTimeMillis());
+        int[] upperBounds = schedule.getUpperBounds(schedule.getTasks().length);
         Task[] tasks = schedule.getTasks();
         for(int i = 0; i < tasks.length; i++){
             capableResources = schedule.getCapableResources(tasks[i]);
+            schedule.assign(tasks[i], capableResources.get((int)(random.nextDouble() * upperBounds[i])));
         }
+    }
+
+    private void initializeTaskTime(Schedule schedule){
+        Greedy greedy = new Greedy(schedule.getSuccesors());
+        greedy.buildTimestamps(schedule);
     }
 }
