@@ -19,17 +19,23 @@ public class GA {
         this.mutationRate = mutationRate;
     }
 
-    public Schedule[] roulette(){
-        List<Schedule> selectedIndividuals = new ArrayList<>();
+    public Schedule roulette(){
+        Schedule schedule = null;
         int populationSize = population.getPopulationSize();
         Schedule[] individuals = population.getIndividuals();
         double[] fitnesses = population.getIndividualFitnesses();
         Random random = new Random();
         for(int i = 0; i < populationSize; i++){
             if(random.nextDouble() >= fitnesses[i]){
-                selectedIndividuals.add(individuals[i]);
+                schedule = individuals[i];
+                break;
             }
         }
-        return (Schedule[]) selectedIndividuals.toArray();
+
+        return schedule;
+    }
+
+    public Schedule crossover(Schedule firstParent, Schedule secondParent){
+
     }
 }
