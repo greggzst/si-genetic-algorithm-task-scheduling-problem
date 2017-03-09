@@ -16,10 +16,12 @@ public class Population {
     private Schedule[] individuals;
     private int[] individualDurations;
     private double[] individualFitnesses;
+    private int populationSize;
     private MSRCPSPIO reader = new MSRCPSPIO();
 
     //constructor for creating population of a given size and using given def file
     public Population(int popSize, String fileName){
+        populationSize = popSize;
         individuals = new Schedule[popSize];
         individualDurations = new int[popSize];
         individualFitnesses = new double[popSize];
@@ -80,6 +82,8 @@ public class Population {
     }
 
     public double[] getIndividualFitnesses() { return individualFitnesses; }
+
+    public int getPopulationSize(){ return populationSize; }
 
     public int getSumOfDurations(){
         int sum = 0;
