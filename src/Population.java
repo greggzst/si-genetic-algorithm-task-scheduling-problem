@@ -79,4 +79,12 @@ public class Population {
     public int[] getIndividualDuration(){
         return individualDuration;
     }
+
+    public int getSumOfDurations(){
+        int sum = 0;
+        for(int i = 0; i < individualDuration.length; i++){
+            sum += individualDuration[i];
+        }
+        return sum;
+    }
 }
