@@ -14,9 +14,11 @@ public class GA {
     private Population population;
     private int crossoverRate;
     private int mutationRate;
+    private int generations;
 
-    public GA(Population population,int crossoverRate, int mutationRate){
+    public GA(Population population, int generations,int crossoverRate, int mutationRate){
         this.population = population;
+        this.generations = generations;
         this.crossoverRate = crossoverRate;
         this.mutationRate = mutationRate;
     }
@@ -39,6 +41,11 @@ public class GA {
         }
 
         return schedule;
+    }
+
+    //this does all the work
+    public void start(){
+
     }
 
     //crossover operation which uses some helper methods
