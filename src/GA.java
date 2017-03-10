@@ -129,7 +129,7 @@ public class GA {
     //find crossover point
     private int crossoverPoint(int numberOfTasks){
         Random random = new Random();
-        int point = (int) random.nextDouble() * numberOfTasks;
+        int point = (int) (random.nextDouble() * numberOfTasks);
         return point;
     }
 
