@@ -90,7 +90,7 @@ public class GA {
 
     private List<Task> getTasksAfterCrossoverPoint(Task[] tasks, int crossoverPoint){
         List<Task> tasksAfter = new ArrayList<>();
-        for(int i = crossoverPoint; i < tasks.length; i++){
+        for(int i = crossoverPoint + 1; i < tasks.length; i++){
             tasksAfter.add(tasks[i]);
         }
         return  tasksAfter;
