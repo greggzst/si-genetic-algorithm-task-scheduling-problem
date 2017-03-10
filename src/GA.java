@@ -80,6 +80,19 @@ public class GA {
         return point;
     }
 
+    private int mutationPoint(int numberOfTasks){
+        Random random = new Random();
+        int point = 0;
+        for(int i = 0; i < numberOfTasks; i++){
+            if(random.nextDouble() <= mutationRate){
+                point = i;
+                break;
+            }
+        }
+
+        return point;
+    }
+
     private List<Task> getTasksBeforeCrossoverPoint(Task[] tasks,int crossoverPoint){
         List<Task> tasksBefore = new ArrayList<>();
         for(int i = 0; i <= crossoverPoint; i++){
