@@ -95,7 +95,7 @@ public class Population {
         return sum;
     }
 
-    public void calculateFitnesses(){
+    private void calculateFitnesses(){
         int sumOfDurations = getSumOfDurations();
         for (int i = 0; i < individualDurations.length; i++){
             individualFitnesses[i] = (double) individualDurations[i] / sumOfDurations;
