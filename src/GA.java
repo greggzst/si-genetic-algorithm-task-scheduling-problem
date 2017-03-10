@@ -71,7 +71,7 @@ public class GA {
         Random random = new Random();
         int point = 0;
         for (int i = 0; i < numberOfTasks; i++){
-            if(random.nextDouble() >= crossoverRate){
+            if(random.nextDouble() <= crossoverRate){
                 point = i;
                 break;
             }
