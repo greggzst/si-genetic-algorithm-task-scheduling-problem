@@ -45,16 +45,21 @@ public class GA {
     public void crossover(Schedule firstParent, Schedule secondParent){
         Task[] firstParentTasks = firstParent.getTasks();
         Task[] secondParentTasks = secondParent.getTasks();
-
+        //get crossover point
         int crossoverPoint = crossoverPoint(firstParentTasks.length);
+        //get tasks before and after crossover point
         List<Task> firstParentTaskBeforeCrossOverPoint = getTasksBeforeCrossoverPoint(firstParentTasks,crossoverPoint);
         List<Task> firstParentTaskAfterCrossOverPoint = getTasksAfterCrossoverPoint(firstParentTasks,crossoverPoint);
         List<Task> secondParentTaskBeforeCrossOverPoint = getTasksBeforeCrossoverPoint(secondParentTasks,crossoverPoint);
         List<Task> secondParentTaskAfterCrossOverPoint = getTasksAfterCrossoverPoint(secondParentTasks,crossoverPoint);
+        //swap resources before crossover point
+        swapResources(firstParentTaskBeforeCrossOverPoint,secondParentTaskBeforeCrossOverPoint);
 
-        firstParentTaskBeforeCrossOverPoint.addAll(secondParentTaskAfterCrossOverPoint);
-        secondParentTaskBeforeCrossOverPoint.addAll(firstParentTaskAfterCrossOverPoint);
-
+        //connect swapped parts with the unchanged one
+        //parts after crossover do not change so they are just being added at the end
+        firstParentTaskBeforeCrossOverPoint.addAll(firstParentTaskAfterCrossOverPoint);
+        secondParentTaskBeforeCrossOverPoint.addAll(secondParentTaskAfterCrossOverPoint);
+        //convert into arrays and set as schedule tasks
         Task[] firstAfterCrossover = (Task[]) firstParentTaskBeforeCrossOverPoint.toArray();
         Task[] secondAfterCrossover = (Task[]) secondParentTaskBeforeCrossOverPoint.toArray();
 
@@ -63,7 +68,7 @@ public class GA {
 
     }
 
-    //swap resources id 
+    //swap resources id
     private void swapResources(List<Task> tasks1, List<Task> tasks2){
         for(int i = 0; i < tasks1.size(); i++){
             int firstTaskResourceId = tasks1.get(i).getResourceId();
