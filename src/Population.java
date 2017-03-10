@@ -48,6 +48,7 @@ public class Population {
             initializeRandomIndividual(individuals[i]);
             initializeTaskTime(individuals[i]);
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
+            individuals[i].fix();
         }
         calculateFitnesses();
     }
@@ -74,7 +75,6 @@ public class Population {
             capableResources = schedule.getCapableResources(tasks[i]);
             schedule.assign(tasks[i], capableResources.get((int)(random.nextDouble() * upperBounds[i])));
         }
-        schedule.fix();
     }
 
     private void initializeTaskTime(Schedule schedule){
