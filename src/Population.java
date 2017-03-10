@@ -32,8 +32,9 @@ public class Population {
     }
     //population from schedule array
     public Population(Schedule[] schedules){
-        this.individuals = schedules;
-        this.individualDurations = new int[individuals.length];
+        populationSize = schedules.length;
+        individuals = schedules;
+        individualDurations = new int[individuals.length];
         for (int i = 0; i < individuals.length; i++){
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
