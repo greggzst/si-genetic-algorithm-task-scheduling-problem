@@ -12,11 +12,11 @@ import java.util.Random;
 public class GA {
 
     private Population population;
-    private int crossoverRate;
-    private int mutationRate;
+    private double crossoverRate;
+    private double mutationRate;
     private int generations;
 
-    public GA(Population population, int generations,int crossoverRate, int mutationRate){
+    public GA(Population population, int generations,double crossoverRate, double mutationRate){
         this.population = population;
         this.generations = generations;
         this.crossoverRate = crossoverRate;
