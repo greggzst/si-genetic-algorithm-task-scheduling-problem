@@ -44,7 +44,7 @@ public class GA {
     }
 
     //this does all the work
-    public void start(){
+    public Schedule start(){
         int genNum = 0;
         int populationSize = population.getPopulationSize();
         //loop until we reach number of given generations
@@ -70,7 +70,7 @@ public class GA {
             genNum++;
         }
 
-        Schedule result = population.getFittest();
+        return population.getFittest();
     }
 
     //crossover operation which uses some helper methods
