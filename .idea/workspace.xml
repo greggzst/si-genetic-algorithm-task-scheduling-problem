@@ -25,8 +25,8 @@
       <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/msrcpsp/scheduling/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="425" column="36" lean-forward="false" selection-start-line="425" selection-start-column="36" selection-end-line="425" selection-end-column="36" />
+            <state relative-caret-position="318">
+              <caret line="417" column="14" lean-forward="false" selection-start-line="417" selection-start-column="14" selection-end-line="417" selection-end-column="14" />
               <folding>
                 <element signature="e#12070#12071#0" expanded="true" />
                 <element signature="e#12092#12093#0" expanded="true" />
@@ -971,8 +971,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/msrcpsp/scheduling/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="425" column="36" lean-forward="false" selection-start-line="425" selection-start-column="36" selection-end-line="425" selection-end-column="36" />
+        <state relative-caret-position="318">
+          <caret line="417" column="14" lean-forward="false" selection-start-line="417" selection-start-column="14" selection-end-line="417" selection-end-column="14" />
           <folding>
             <element signature="e#12070#12071#0" expanded="true" />
             <element signature="e#12092#12093#0" expanded="true" />

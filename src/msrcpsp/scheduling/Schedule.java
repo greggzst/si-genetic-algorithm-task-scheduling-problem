@@ -415,7 +415,7 @@ public class Schedule {
     return num;
   }
 
-  //fix scheudle according to constraints
+  //fix schedule according to constraints
   public void fix(){
     Task[] tasks = getTasks();
     for(Task first: tasks){
