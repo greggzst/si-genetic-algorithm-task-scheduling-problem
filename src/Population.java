@@ -57,7 +57,7 @@ public class Population {
         int index = 0;
         double fittest = individualFitnesses[index];
         for(int i = 1; i < populationSize; i++){
-            if(individualFitnesses[i] < fittest){
+            if(fittest < individualFitnesses[i]){
                 index = i;
                 fittest = individualFitnesses[index];
             }
