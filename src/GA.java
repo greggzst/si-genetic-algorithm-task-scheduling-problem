@@ -76,7 +76,7 @@ public class GA {
     //crossover operation which uses some helper methods
     private void crossover(Schedule firstParent, Schedule secondParent){
         Random random = new Random();
-        if(random.nextDouble() < crossoverRate) {
+        if(random.nextDouble() <= crossoverRate) {
             Task[] firstParentTasks = firstParent.getTasks();
             Task[] secondParentTasks = secondParent.getTasks();
             //get crossover point
