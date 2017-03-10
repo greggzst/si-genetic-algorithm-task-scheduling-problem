@@ -20,6 +20,7 @@ public class GA {
         this.mutationRate = mutationRate;
     }
 
+    //roulette operation
     public Schedule roulette(){
         Schedule schedule = null;
         int populationSize = population.getPopulationSize();
@@ -27,6 +28,8 @@ public class GA {
         double[] fitnesses = population.getIndividualFitnesses();
         Random random = new Random();
 
+        //loop through all population and rotate roulette if you get the number within approprate
+        //fitness return the individual
         for(int i = 0; i < populationSize; i++){
             if(random.nextDouble() >= fitnesses[i]){
                 schedule = individuals[i];
@@ -37,6 +40,7 @@ public class GA {
         return schedule;
     }
 
+    //crossover operation which uses some helper methods
     public void crossover(Schedule firstParent, Schedule secondParent){
         Task[] firstParentTasks = firstParent.getTasks();
         Task[] secondParentTasks = secondParent.getTasks();
@@ -62,6 +66,7 @@ public class GA {
 
     }
 
+    //find crossover point
     private int crossoverPoint(int numberOfTasks){
         Random random = new Random();
         int point = 0;
