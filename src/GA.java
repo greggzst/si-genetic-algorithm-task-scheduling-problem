@@ -45,7 +45,32 @@ public class GA {
 
     //this does all the work
     public void start(){
+        int genNum = 0;
+        int populationSize = population.getPopulationSize();
+        //loop until we reach number of given generations
+        while(genNum < generations){
 
+            Schedule[] newPopulation = new Schedule[populationSize];
+            int popSize = 0;
+
+            while(popSize < populationSize){
+                Schedule parent1 = roulette();
+                Schedule parent2 = roulette();
+
+                crossover(parent1,parent2);
+                mutate(parent1);
+                mutate(parent2);
+
+                newPopulation[popSize++] = parent1;
+                newPopulation[popSize++] = parent2;
+            }
+
+            population = new Population(newPopulation);
+
+            genNum++;
+        }
+
+        Schedule result = population.getFittest();
     }
 
     //crossover operation which uses some helper methods
