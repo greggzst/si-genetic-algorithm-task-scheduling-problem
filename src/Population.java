@@ -35,6 +35,7 @@ public class Population {
         populationSize = schedules.length;
         individuals = schedules;
         individualDurations = new int[individuals.length];
+        individualFitnesses = new double[individuals.length];
         for (int i = 0; i < individuals.length; i++){
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }

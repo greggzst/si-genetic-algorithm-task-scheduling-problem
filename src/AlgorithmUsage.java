@@ -1,5 +1,7 @@
 import msrcpsp.io.MSRCPSPIO;
 import msrcpsp.scheduling.Schedule;
+import msrcpsp.validation.BaseValidator;
+import msrcpsp.validation.CompleteValidator;
 
 import java.io.IOException;
 
@@ -18,6 +20,9 @@ public class AlgorithmUsage {
 
         GA ga = new GA(pop, 100, 0.1,0.01);
         Schedule schedule = ga.start();
+        BaseValidator validator = new CompleteValidator();
+        System.out.println(validator.validate(schedule));
+        System.out.println(validator.getErrorMessages());
         // save to a file
         try {
             reader.write(schedule, writeFile);

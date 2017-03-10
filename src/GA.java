@@ -92,8 +92,8 @@ public class GA {
         firstParentTaskBeforeCrossOverPoint.addAll(firstParentTaskAfterCrossOverPoint);
         secondParentTaskBeforeCrossOverPoint.addAll(secondParentTaskAfterCrossOverPoint);
         //convert into arrays and set as schedule tasks
-        Task[] firstAfterCrossover = (Task[]) firstParentTaskBeforeCrossOverPoint.toArray();
-        Task[] secondAfterCrossover = (Task[]) secondParentTaskBeforeCrossOverPoint.toArray();
+        Task[] firstAfterCrossover =  firstParentTaskBeforeCrossOverPoint.toArray(new Task[firstParentTaskBeforeCrossOverPoint.size()]);
+        Task[] secondAfterCrossover =  secondParentTaskBeforeCrossOverPoint.toArray(new Task[secondParentTaskBeforeCrossOverPoint.size()]);
 
         firstParent.setTasks(firstAfterCrossover);
         secondParent.setTasks(secondAfterCrossover);
