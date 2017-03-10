@@ -63,6 +63,16 @@ public class GA {
 
     }
 
+    //swap resources id 
+    private void swapResources(List<Task> tasks1, List<Task> tasks2){
+        for(int i = 0; i < tasks1.size(); i++){
+            int firstTaskResourceId = tasks1.get(i).getResourceId();
+            int secondTaskResourceId = tasks2.get(i).getResourceId();
+            tasks1.get(i).setResourceId(secondTaskResourceId);
+            tasks2.get(i).setResourceId(firstTaskResourceId);
+        }
+    }
+
     //mutating tasks in schedule according to mutation rate
     public void mutate(Schedule schedule){
         Random random = new Random();
