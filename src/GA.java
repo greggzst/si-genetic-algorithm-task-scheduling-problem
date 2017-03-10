@@ -75,28 +75,31 @@ public class GA {
 
     //crossover operation which uses some helper methods
     private void crossover(Schedule firstParent, Schedule secondParent){
-        Task[] firstParentTasks = firstParent.getTasks();
-        Task[] secondParentTasks = secondParent.getTasks();
-        //get crossover point
-        int crossoverPoint = crossoverPoint(firstParentTasks.length);
-        //get tasks before and after crossover point
-        List<Task> firstParentTaskBeforeCrossOverPoint = getTasksBeforeCrossoverPoint(firstParentTasks,crossoverPoint);
-        List<Task> firstParentTaskAfterCrossOverPoint = getTasksAfterCrossoverPoint(firstParentTasks,crossoverPoint);
-        List<Task> secondParentTaskBeforeCrossOverPoint = getTasksBeforeCrossoverPoint(secondParentTasks,crossoverPoint);
-        List<Task> secondParentTaskAfterCrossOverPoint = getTasksAfterCrossoverPoint(secondParentTasks,crossoverPoint);
-        //swap resources before crossover point
-        swapResources(firstParentTaskBeforeCrossOverPoint,secondParentTaskBeforeCrossOverPoint);
+        Random random = new Random();
+        if(random.nextDouble() < crossoverRate) {
+            Task[] firstParentTasks = firstParent.getTasks();
+            Task[] secondParentTasks = secondParent.getTasks();
+            //get crossover point
+            int crossoverPoint = crossoverPoint(firstParentTasks.length);
+            //get tasks before and after crossover point
+            List<Task> firstParentTaskBeforeCrossOverPoint = getTasksBeforeCrossoverPoint(firstParentTasks, crossoverPoint);
+            List<Task> firstParentTaskAfterCrossOverPoint = getTasksAfterCrossoverPoint(firstParentTasks, crossoverPoint);
+            List<Task> secondParentTaskBeforeCrossOverPoint = getTasksBeforeCrossoverPoint(secondParentTasks, crossoverPoint);
+            List<Task> secondParentTaskAfterCrossOverPoint = getTasksAfterCrossoverPoint(secondParentTasks, crossoverPoint);
+            //swap resources before crossover point
+            swapResources(firstParentTaskBeforeCrossOverPoint, secondParentTaskBeforeCrossOverPoint);
 
-        //connect swapped parts with the unchanged one
-        //parts after crossover do not change so they are just being added at the end
-        firstParentTaskBeforeCrossOverPoint.addAll(firstParentTaskAfterCrossOverPoint);
-        secondParentTaskBeforeCrossOverPoint.addAll(secondParentTaskAfterCrossOverPoint);
-        //convert into arrays and set as schedule tasks
-        Task[] firstAfterCrossover =  firstParentTaskBeforeCrossOverPoint.toArray(new Task[firstParentTaskBeforeCrossOverPoint.size()]);
-        Task[] secondAfterCrossover =  secondParentTaskBeforeCrossOverPoint.toArray(new Task[secondParentTaskBeforeCrossOverPoint.size()]);
+            //connect swapped parts with the unchanged one
+            //parts after crossover do not change so they are just being added at the end
+            firstParentTaskBeforeCrossOverPoint.addAll(firstParentTaskAfterCrossOverPoint);
+            secondParentTaskBeforeCrossOverPoint.addAll(secondParentTaskAfterCrossOverPoint);
+            //convert into arrays and set as schedule tasks
+            Task[] firstAfterCrossover = firstParentTaskBeforeCrossOverPoint.toArray(new Task[firstParentTaskBeforeCrossOverPoint.size()]);
+            Task[] secondAfterCrossover = secondParentTaskBeforeCrossOverPoint.toArray(new Task[secondParentTaskBeforeCrossOverPoint.size()]);
 
-        firstParent.setTasks(firstAfterCrossover);
-        secondParent.setTasks(secondAfterCrossover);
+            firstParent.setTasks(firstAfterCrossover);
+            secondParent.setTasks(secondAfterCrossover);
+        }
 
     }
 
@@ -126,14 +129,7 @@ public class GA {
     //find crossover point
     private int crossoverPoint(int numberOfTasks){
         Random random = new Random();
-        int point = 0;
-        for (int i = 0; i < numberOfTasks; i++){
-            if(random.nextDouble() <= crossoverRate){
-                point = i;
-                break;
-            }
-        }
-
+        int point = (int) random.nextDouble() * numberOfTasks;
         return point;
     }
 
