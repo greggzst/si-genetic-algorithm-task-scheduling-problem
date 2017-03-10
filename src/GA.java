@@ -1,3 +1,4 @@
+import msrcpsp.scheduling.Resource;
 import msrcpsp.scheduling.Schedule;
 import msrcpsp.scheduling.Task;
 
@@ -62,8 +63,17 @@ public class GA {
 
     }
 
+    //mutating tasks in schedule according to mutation rate
     public void mutate(Schedule schedule){
-
+        Random random = new Random();
+        Task[] tasks = schedule.getTasks();
+        int[] upperBounds = schedule.getUpperBounds(tasks.length);
+        for(int i = 0; i < tasks.length; i++){
+            if(random.nextDouble() <= mutationRate){
+                List<Resource> capableResources = schedule.getCapableResources(tasks[i]);
+                tasks[i].setResourceId(capableResources.get((int)(random.nextDouble() * upperBounds[i])).getId());
+            }
+        }
     }
 
     //find crossover point
@@ -72,19 +82,6 @@ public class GA {
         int point = 0;
         for (int i = 0; i < numberOfTasks; i++){
             if(random.nextDouble() <= crossoverRate){
-                point = i;
-                break;
-            }
-        }
-
-        return point;
-    }
-
-    private int mutationPoint(int numberOfTasks){
-        Random random = new Random();
-        int point = 0;
-        for(int i = 0; i < numberOfTasks; i++){
-            if(random.nextDouble() <= mutationRate){
                 point = i;
                 break;
             }
