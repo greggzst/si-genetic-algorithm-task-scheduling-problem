@@ -38,6 +38,7 @@ public class Population {
         for (int i = 0; i < individuals.length; i++){
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
+        calculateFitnesses();
     }
 
     //initializing population at random and setting task times
