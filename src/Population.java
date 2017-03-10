@@ -51,6 +51,18 @@ public class Population {
         calculateFitnesses();
     }
 
+    public Schedule getFittest(){
+        int index = 0;
+        double fittest = individualFitnesses[index];
+        for(int i = 1; i < populationSize; i++){
+            if(fittest < individualFitnesses[i]){
+                index = i;
+            }
+        }
+        return individuals[index];
+
+    }
+
     //initializing particular individual taking into account task constraints
     private void initializeRandomIndividual(Schedule schedule){
         List<Resource> capableResources;
