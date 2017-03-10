@@ -415,6 +415,11 @@ public class Schedule {
     return num;
   }
 
+  //fix scheudle according to constraints
+  public void fix(){
+
+  }
+
   public Task[] getTasks() {
     return tasks;
   }
