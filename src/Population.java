@@ -74,6 +74,7 @@ public class Population {
             capableResources = schedule.getCapableResources(tasks[i]);
             schedule.assign(tasks[i], capableResources.get((int)(random.nextDouble() * upperBounds[i])));
         }
+        schedule.fix();
     }
 
     private void initializeTaskTime(Schedule schedule){

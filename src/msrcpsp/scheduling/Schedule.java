@@ -424,6 +424,7 @@ public class Schedule {
         if(first.getId() != second.getId() && first.getResourceId() == second.getResourceId()
                 && first.getStart() <= second.getStart() && (first.getStart() + first.getDuration()) > second.getStart()){
           Resource availableResource = findFirstFreeResource(getCapableResources(second));
+          availableResource.setFinish(second.getStart()+second.getDuration());
           second.setResourceId(availableResource.getId());
         }
       }

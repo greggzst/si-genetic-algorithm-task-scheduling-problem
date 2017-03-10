@@ -99,6 +99,9 @@ public class GA {
 
             firstParent.setTasks(firstAfterCrossover);
             secondParent.setTasks(secondAfterCrossover);
+
+            firstParent.fix();
+            secondParent.fix();
         }
 
     }
@@ -124,6 +127,8 @@ public class GA {
                 tasks[i].setResourceId(capableResources.get((int)(random.nextDouble() * upperBounds[i])).getId());
             }
         }
+
+        schedule.fix();
     }
 
     //find crossover point
