@@ -24,7 +24,7 @@ public class GA {
     }
 
     //roulette operation
-    public Schedule roulette(){
+    private Schedule roulette(){
         Schedule schedule = null;
         int populationSize = population.getPopulationSize();
         Schedule[] individuals = population.getIndividuals();
@@ -74,7 +74,7 @@ public class GA {
     }
 
     //crossover operation which uses some helper methods
-    public void crossover(Schedule firstParent, Schedule secondParent){
+    private void crossover(Schedule firstParent, Schedule secondParent){
         Task[] firstParentTasks = firstParent.getTasks();
         Task[] secondParentTasks = secondParent.getTasks();
         //get crossover point
@@ -111,7 +111,7 @@ public class GA {
     }
 
     //mutating tasks in schedule according to mutation rate
-    public void mutate(Schedule schedule){
+    private void mutate(Schedule schedule){
         Random random = new Random();
         Task[] tasks = schedule.getTasks();
         int[] upperBounds = schedule.getUpperBounds(tasks.length);
