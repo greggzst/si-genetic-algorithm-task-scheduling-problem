@@ -59,6 +59,7 @@ public class Population {
         for(int i = 1; i < populationSize; i++){
             if(fittest < individualFitnesses[i]){
                 index = i;
+                fittest = individualFitnesses[index];
             }
         }
         return individuals[index];

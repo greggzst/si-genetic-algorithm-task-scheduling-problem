@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="944c5b70-56e1-46d7-9764-70041894fb2f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AI/GA.class" afterPath="$PROJECT_DIR$/out/production/AI/GA.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AI/Population.class" afterPath="$PROJECT_DIR$/out/production/AI/Population.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/solutions_small/10_3_5_3.sol" afterPath="$PROJECT_DIR$/assets/solutions_small/10_3_5_3.sol" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Population.java" afterPath="$PROJECT_DIR$/src/Population.java" />
     </list>
     <ignored path="AI.iws" />
@@ -26,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Population.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Population.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Population.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="30" />
+            <state relative-caret-position="345">
+              <caret line="61" column="53" lean-forward="false" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -41,8 +37,8 @@
       <file leaf-file-name="Schedule.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/msrcpsp/scheduling/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="425" column="87" lean-forward="false" selection-start-line="425" selection-start-column="87" selection-end-line="425" selection-end-column="87" />
+            <state relative-caret-position="182">
+              <caret line="296" column="18" lean-forward="false" selection-start-line="296" selection-start-column="18" selection-end-line="296" selection-end-column="18" />
               <folding>
                 <element signature="e#12149#12150#0" expanded="true" />
                 <element signature="e#12171#12172#0" expanded="true" />
@@ -87,7 +83,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlgorithmUsage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AlgorithmUsage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AlgorithmUsage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="142">
@@ -144,8 +140,8 @@
         <option value="$PROJECT_DIR$/src/Runner.java" />
         <option value="$PROJECT_DIR$/src/AlgorithmUsage.java" />
         <option value="$PROJECT_DIR$/src/GA.java" />
-        <option value="$PROJECT_DIR$/src/Population.java" />
         <option value="$PROJECT_DIR$/src/msrcpsp/scheduling/Schedule.java" />
+        <option value="$PROJECT_DIR$/src/Population.java" />
       </list>
     </option>
   </component>
@@ -1014,16 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Population.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="50" column="30" lean-forward="false" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/msrcpsp/scheduling/Resource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -1042,10 +1028,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AlgorithmUsage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/msrcpsp/scheduling/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="425" column="87" lean-forward="false" selection-start-line="425" selection-start-column="87" selection-end-line="425" selection-end-column="87" />
+        <state relative-caret-position="182">
+          <caret line="296" column="18" lean-forward="false" selection-start-line="296" selection-start-column="18" selection-end-line="296" selection-end-column="18" />
           <folding>
             <element signature="e#12149#12150#0" expanded="true" />
             <element signature="e#12171#12172#0" expanded="true" />
@@ -1053,10 +1049,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AlgorithmUsage.java">
+    <entry file="file://$PROJECT_DIR$/src/Population.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="15" column="43" lean-forward="false" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        <state relative-caret-position="345">
+          <caret line="61" column="53" lean-forward="false" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
