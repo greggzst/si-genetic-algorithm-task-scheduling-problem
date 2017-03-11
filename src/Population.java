@@ -53,13 +53,14 @@ public class Population {
         calculateFitnesses();
     }
 
-    public Schedule getFittest(){
+    //the best schedule has the shortest duration time
+    public Schedule getBest(){
         int index = 0;
-        double fittest = individualFitnesses[index];
+        int duration = individualDurations[index];
         for(int i = 1; i < populationSize; i++){
-            if(fittest < individualFitnesses[i]){
+            if(duration > individualDurations[i]){
                 index = i;
-                fittest = individualFitnesses[index];
+                duration = individualDurations[index];
             }
         }
         return individuals[index];
