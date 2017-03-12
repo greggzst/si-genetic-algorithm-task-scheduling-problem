@@ -66,6 +66,19 @@ public class Population {
 
     }
 
+    //the worst schedule has the longest duration time
+    public Schedule getWorst(){
+        int index = 0;
+        int duration = individualDurations[index];
+        for(int i = 1; i < populationSize; i++){
+            if(duration < individualDurations[i]){
+                index = i;
+                duration = individualDurations[index];
+            }
+        }
+        return individuals[index];
+    }
+
     //initializing particular individual taking into account task constraints
     private void initializeRandomIndividual(Schedule schedule){
         List<Resource> capableResources;
