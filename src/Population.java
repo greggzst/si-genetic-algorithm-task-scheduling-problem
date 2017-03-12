@@ -62,6 +62,16 @@ public class Population {
         return duration;
     }
 
+    public int getWorstDuration(){
+        int duration = individualDurations[0];
+        for(int i = 1; i < populationSize; i++){
+            if(duration < individualDurations[i]){
+                duration = individualDurations[i];
+            }
+        }
+        return duration;
+    }
+
     //the best schedule has the shortest duration time
     public Schedule getBest(){
         int index = 0;
