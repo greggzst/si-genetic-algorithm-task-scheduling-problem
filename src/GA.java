@@ -1,6 +1,7 @@
 import msrcpsp.scheduling.Resource;
 import msrcpsp.scheduling.Schedule;
 import msrcpsp.scheduling.Task;
+import msrcpsp.scheduling.greedy.Greedy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -100,6 +101,11 @@ public class GA {
             firstParent.setTasks(firstAfterCrossover);
             secondParent.setTasks(secondAfterCrossover);
 
+            Greedy greedyFirst = new Greedy(firstParent.getSuccesors());
+            greedyFirst.buildTimestamps(firstParent);
+
+            Greedy greedySecond = new Greedy(secondParent.getSuccesors());
+            greedySecond.buildTimestamps(secondParent);
         }
 
     }
@@ -126,6 +132,8 @@ public class GA {
             }
         }
 
+        Greedy greedy = new Greedy(schedule.getSuccesors());
+        greedy.buildTimestamps(schedule);
     }
 
     //find crossover point
