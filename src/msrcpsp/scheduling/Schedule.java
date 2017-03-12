@@ -415,27 +415,6 @@ public class Schedule {
     return num;
   }
 
-  //fix schedule according to constraints
-  public void fix(){
-    Task[] tasks = getTasks();
-    for(Task first: tasks){
-      for(Task second: tasks){
-        //there is conflict when both tasks have the same resource and they colide at the same time
-        if(first.getId() != second.getId() && first.getResourceId() == second.getResourceId()
-                && first.getStart() <= second.getStart() && (first.getStart() + first.getDuration()) > second.getStart()){
-          List<Resource> capableResources = getCapableResources(second,second.getStart());
-          if(capableResources.size() == 0){
-            second.setStart(first.getStart()+first.getDuration());
-          }else{
-            Resource availableResource = findFirstFreeResource(capableResources);
-            availableResource.setFinish(second.getStart()+second.getDuration());
-            second.setResourceId(availableResource.getId());
-          }
-        }
-      }
-    }
-  }
-
   public Task[] getTasks() {
     return tasks;
   }

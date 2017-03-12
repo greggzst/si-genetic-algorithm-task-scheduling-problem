@@ -70,7 +70,7 @@ public class GA {
             genNum++;
         }
 
-        return population.getFittest();
+        return population.getBest();
     }
 
     //crossover operation which uses some helper methods
