@@ -48,7 +48,6 @@ public class Population {
             initializeRandomIndividual(individuals[i]);
             initializeTaskTime(individuals[i]);
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
-            individuals[i].fix();
         }
         calculateFitnesses();
     }

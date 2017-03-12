@@ -100,8 +100,6 @@ public class GA {
             firstParent.setTasks(firstAfterCrossover);
             secondParent.setTasks(secondAfterCrossover);
 
-            firstParent.fix();
-            secondParent.fix();
         }
 
     }
@@ -128,7 +126,6 @@ public class GA {
             }
         }
 
-        schedule.fix();
     }
 
     //find crossover point
