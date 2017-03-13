@@ -72,6 +72,10 @@ public class Population {
         return duration;
     }
 
+    public double getAverageDuration(){
+        return (double) (getSumOfDurations() / getPopulationSize());
+    }
+
     //the best schedule has the shortest duration time
     public Schedule getBest(){
         int index = 0;
