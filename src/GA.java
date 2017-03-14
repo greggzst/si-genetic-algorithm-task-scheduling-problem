@@ -48,6 +48,13 @@ public class GA {
     public Schedule start(){
         int genNum = 0;
         int populationSize = population.getPopulationSize();
+
+        System.out.println("Początkowa populacja: ");
+        System.out.println("Sredni czas harmonogramu: " + population.getAverageDuration());
+        System.out.println("Czas najlepszego harmonogramu: " + population.getBestDuration());
+        System.out.println("Czas najgorszego harmonogramu: " + population.getWorstDuration());
+        System.out.println();
+
         //loop until we reach number of given generations
         while(genNum < generations){
 
@@ -67,6 +74,12 @@ public class GA {
             }
 
             population = new Population(newPopulation);
+
+            System.out.println("Pokolenie nr: " + (genNum + 1));
+            System.out.println("Sredni czas harmonogramu: " + population.getAverageDuration());
+            System.out.println("Czas najlepszego harmonogramu: " + population.getBestDuration());
+            System.out.println("Czas najgorszego harmonogramu: " + population.getWorstDuration());
+            System.out.println();
 
             genNum++;
         }
