@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="944c5b70-56e1-46d7-9764-70041894fb2f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Population.java" afterPath="$PROJECT_DIR$/src/Population.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AI/GA.class" afterPath="$PROJECT_DIR$/out/production/AI/GA.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AI/Population.class" afterPath="$PROJECT_DIR$/out/production/AI/Population.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/solutions_small/10_7_10_7.sol" afterPath="$PROJECT_DIR$/assets/solutions_small/10_7_10_7.sol" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AlgorithmUsage.java" afterPath="$PROJECT_DIR$/src/AlgorithmUsage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GA.java" afterPath="$PROJECT_DIR$/src/GA.java" />
     </list>
     <ignored path="AI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Population.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Population.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Population.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
+            <state relative-caret-position="-176">
               <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -39,8 +44,8 @@
       <file leaf-file-name="AlgorithmUsage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AlgorithmUsage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
+            <state relative-caret-position="440">
+              <caret line="26" column="77" lean-forward="false" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GA.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GA.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="556">
+              <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,9 +97,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/Runner.java" />
         <option value="$PROJECT_DIR$/src/msrcpsp/scheduling/Schedule.java" />
+        <option value="$PROJECT_DIR$/src/Population.java" />
         <option value="$PROJECT_DIR$/src/AlgorithmUsage.java" />
         <option value="$PROJECT_DIR$/src/GA.java" />
-        <option value="$PROJECT_DIR$/src/Population.java" />
       </list>
     </option>
   </component>
@@ -571,7 +576,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26783755" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -605,7 +610,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="53" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -644,7 +649,7 @@
         <state relative-caret-position="968">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
-            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -756,7 +761,7 @@
         <state relative-caret-position="1210">
           <caret line="71" column="15" lean-forward="false" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
           <folding>
-            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -800,7 +805,7 @@
         <state relative-caret-position="1210">
           <caret line="71" column="15" lean-forward="false" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
           <folding>
-            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -974,7 +979,7 @@
         <state relative-caret-position="502">
           <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
-            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1014,18 +1019,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AlgorithmUsage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="440">
+          <caret line="26" column="77" lean-forward="false" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1034,12 +1029,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Population.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
+        <state relative-caret-position="-176">
           <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2636#2637#0" expanded="true" />
             <element signature="e#2711#2712#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="44" column="5" lean-forward="false" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

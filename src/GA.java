@@ -62,8 +62,14 @@ public class GA {
             int popSize = 0;
 
             while(popSize < populationSize){
-                Schedule parent1 = roulette();
-                Schedule parent2 = roulette();
+                Schedule parent1 = null;
+                while(parent1 == null){
+                    parent1 = roulette();
+                }
+                Schedule parent2 = null;
+                while(parent2 == null){
+                    parent2 = roulette();
+                }
 
                 crossover(parent1,parent2);
                 mutate(parent1);
