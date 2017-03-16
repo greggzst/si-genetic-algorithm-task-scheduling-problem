@@ -15,7 +15,7 @@ import java.util.Random;
 public class Population {
     private Schedule[] individuals;
     private int[] individualDurations;
-    private double[] individualFitnesses;
+    private double[] individualRouletteRange;
     private int populationSize;
     private MSRCPSPIO reader = new MSRCPSPIO();
 
@@ -24,7 +24,7 @@ public class Population {
         populationSize = popSize;
         individuals = new Schedule[popSize];
         individualDurations = new int[popSize];
-        individualFitnesses = new double[popSize];
+        individualRouletteRange = new double[popSize];
         for(int i = 0; i < individuals.length; i++) {
             individuals[i] = reader.readDefinition(fileName);
             individuals[i].setEvaluator(new DurationEvaluator(individuals[i]));
@@ -35,12 +35,11 @@ public class Population {
         populationSize = schedules.length;
         individuals = schedules;
         individualDurations = new int[individuals.length];
-        individualFitnesses = new double[individuals.length];
+        individualRouletteRange = new double[individuals.length];
         for (int i = 0; i < individuals.length; i++){
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
-        sortPopulation();
-        calculateFitnesses();
+        calculateRouletteRange();
     }
 
     //initializing population at random and setting task times
@@ -50,8 +49,7 @@ public class Population {
             initializeTaskTime(individuals[i]);
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
-        sortPopulation();
-        calculateFitnesses();
+        calculateRouletteRange();
     }
 
     public int getBestDuration(){
@@ -156,7 +154,7 @@ public class Population {
         return individualDurations;
     }
 
-    public double[] getIndividualFitnesses() { return individualFitnesses; }
+    public double[] getIndividualRouletteRange() { return individualRouletteRange; }
 
     public int getPopulationSize(){ return populationSize; }
 
@@ -177,11 +175,11 @@ public class Population {
         return sum;
     }
 
-    private void calculateFitnesses(){
+    private void calculateRouletteRange(){
         double sumOfInverseDurations = getSumOfInverseDurations();
         for (int i = 0; i < individualDurations.length; i++){
             double durationInverse = (double) 1 / individualDurations[i];
-            individualFitnesses[i] =  durationInverse  / sumOfInverseDurations;
+            individualRouletteRange[i] =  durationInverse  / sumOfInverseDurations;
         }
     }
 }
