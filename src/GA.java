@@ -95,6 +95,7 @@ public class GA {
             int popSize = 0;
 
             while(popSize < populationSize){
+
                 Schedule parent1 = null;
                 Schedule parent2 = null;
 
