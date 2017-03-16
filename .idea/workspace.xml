@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="944c5b70-56e1-46d7-9764-70041894fb2f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Population.java" afterPath="$PROJECT_DIR$/src/Population.java" />
     </list>
     <ignored path="AI.iws" />
@@ -26,12 +25,12 @@
       <file leaf-file-name="Population.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Population.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2838">
-              <caret line="138" column="50" lean-forward="false" selection-start-line="138" selection-start-column="50" selection-end-line="138" selection-end-column="50" />
+            <state relative-caret-position="616">
+              <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2584#2585#0" expanded="true" />
-                <element signature="e#2659#2660#0" expanded="true" />
+                <element signature="e#2636#2637#0" expanded="true" />
+                <element signature="e#2711#2712#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -676,8 +675,8 @@
           <caret line="85" column="58" lean-forward="false" selection-start-line="85" selection-start-column="58" selection-end-line="85" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
+            <element signature="e#2636#2637#0" expanded="true" />
+            <element signature="e#2711#2712#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -708,8 +707,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
+            <element signature="e#2636#2637#0" expanded="true" />
+            <element signature="e#2711#2712#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -738,8 +737,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
+            <element signature="e#2636#2637#0" expanded="true" />
+            <element signature="e#2711#2712#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -782,8 +781,8 @@
           <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
+            <element signature="e#2636#2637#0" expanded="true" />
+            <element signature="e#2711#2712#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1035,12 +1034,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Population.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2838">
-          <caret line="138" column="50" lean-forward="false" selection-start-line="138" selection-start-column="50" selection-end-line="138" selection-end-column="50" />
+        <state relative-caret-position="616">
+          <caret line="52" column="25" lean-forward="false" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2659#2660#0" expanded="true" />
+            <element signature="e#2636#2637#0" expanded="true" />
+            <element signature="e#2711#2712#0" expanded="true" />
           </folding>
         </state>
       </provider>

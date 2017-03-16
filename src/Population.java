@@ -39,6 +39,7 @@ public class Population {
         for (int i = 0; i < individuals.length; i++){
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
+        sortPopulation();
         calculateFitnesses();
     }
 
@@ -49,6 +50,7 @@ public class Population {
             initializeTaskTime(individuals[i]);
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
+        sortPopulation();
         calculateFitnesses();
     }
 
