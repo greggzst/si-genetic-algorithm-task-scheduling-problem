@@ -40,13 +40,13 @@ public class GA {
         Schedule schedule = null;
         int populationSize = population.getPopulationSize();
         Schedule[] individuals = population.getIndividuals();
-        double[] fitnesses = population.getIndividualRouletteRange();
+        double[] range = population.getIndividualRouletteRange();
         Random random = new Random();
         double randomNumber = random.nextDouble();
         //loop through all population and rotate roulette if you get the number within approprate
         //fitness return the individual
         for(int i = 0; i < populationSize; i++){
-            if(randomNumber >= fitnesses[i]){
+            if(random.nextDouble() >= range[i]){
                 schedule = individuals[i];
                 break;
             }
