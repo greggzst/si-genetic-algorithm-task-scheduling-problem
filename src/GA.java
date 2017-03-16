@@ -44,6 +44,10 @@ public class GA {
         return schedule;
     }
 
+    private Schedule tournament(){
+
+    }
+
     //this does all the work
     public Schedule start(){
         int genNum = 0;
