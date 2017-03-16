@@ -157,9 +157,10 @@ public class Population {
     }
 
     private void calculateFitnesses(){
-        double sumOfDurations = getSumOfDurations();
+        double sumOfDurations = getSumOfInverseDurations();
         for (int i = 0; i < individualDurations.length; i++){
-            individualFitnesses[i] =  individualDurations[i]  / sumOfDurations;
+            double numerator = (double) 1 / individualDurations[i];
+            individualFitnesses[i] =  numerator  / sumOfDurations;
         }
     }
 }
