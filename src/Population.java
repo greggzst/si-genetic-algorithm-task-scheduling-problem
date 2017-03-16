@@ -39,7 +39,6 @@ public class Population {
         for (int i = 0; i < individuals.length; i++){
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
-        sortPopulation();
         calculateFitnesses();
     }
 
@@ -50,7 +49,6 @@ public class Population {
             initializeTaskTime(individuals[i]);
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
-        sortPopulation();
         calculateFitnesses();
     }
 
@@ -129,25 +127,6 @@ public class Population {
         return baseIndividual.getDuration();
     }
 
-    private void sortPopulation(){
-        Schedule tempSchedule = null;
-        int tempDuration = 0;
-        for(int i=0; i < populationSize; i++){
-            for(int j=1; j < (populationSize-i); j++){
-                if(individualDurations[j-1] > individualDurations[j]){
-                    //swap elements
-                    tempSchedule = individuals[j-1];
-                    individuals[j-1] = individuals[j];
-                    individuals[j] = tempSchedule;
-                    tempDuration = individualDurations[j-1];
-                    individualDurations[j-1] = individualDurations[j];
-                    individualDurations[j] = tempDuration;
-                }
-
-            }
-        }
-    }
-
     public Schedule[] getIndividuals(){
         return individuals;
     }
@@ -178,10 +157,9 @@ public class Population {
     }
 
     private void calculateFitnesses(){
-        double sumOfInverseDurations = getSumOfInverseDurations();
+        double sumOfDurations = getSumOfDurations();
         for (int i = 0; i < individualDurations.length; i++){
-            double durationInverse = (double) 1 / individualDurations[i];
-            individualFitnesses[i] =  durationInverse  / sumOfInverseDurations;
+            individualFitnesses[i] =  individualDurations[i]  / sumOfDurations;
         }
     }
 }

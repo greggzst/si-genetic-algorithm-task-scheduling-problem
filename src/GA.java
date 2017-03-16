@@ -42,17 +42,19 @@ public class GA {
         Schedule[] individuals = population.getIndividuals();
         double[] fitnesses = population.getIndividualFitnesses();
         Random random = new Random();
-        double randomNumber = random.nextDouble();
+        double roulettePointer = random.nextDouble();
+        double rangeUpperBound = 0;
         //loop through all population and rotate roulette if you get the number within approprate
         //fitness return the individual
         for(int i = 0; i < populationSize; i++){
-            if(randomNumber >= fitnesses[i]){
+            rangeUpperBound += fitnesses[i];
+            if (roulettePointer < rangeUpperBound){
                 schedule = individuals[i];
                 break;
             }
         }
 
-        return schedule;
+        return schedule != null ? schedule : individuals[populationSize - 1];
     }
 
     private Schedule tournament(){
@@ -97,13 +99,8 @@ public class GA {
                 Schedule parent2 = null;
 
                 if(tournamentSize == 0){
-                    while(parent1 == null){
-                        parent1 = roulette();
-                    }
-
-                    while(parent2 == null){
-                        parent2 = roulette();
-                    }
+                    parent1 = roulette();
+                    parent2 = roulette();
                 }else{
                     parent1 = tournament();
                     parent2 = tournament();
