@@ -31,11 +31,11 @@ public class GA {
         Schedule[] individuals = population.getIndividuals();
         double[] fitnesses = population.getIndividualFitnesses();
         Random random = new Random();
-
+        double randomNumber = random.nextDouble();
         //loop through all population and rotate roulette if you get the number within approprate
         //fitness return the individual
         for(int i = 0; i < populationSize; i++){
-            if(random.nextDouble() >= fitnesses[i]){
+            if(randomNumber >= fitnesses[i]){
                 schedule = individuals[i];
                 break;
             }
