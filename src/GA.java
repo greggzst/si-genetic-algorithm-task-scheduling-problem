@@ -16,13 +16,24 @@ public class GA {
     private double crossoverRate;
     private double mutationRate;
     private int generations;
+    private int tournamentSize;
 
     public GA(Population population, int generations,double crossoverRate, double mutationRate){
         this.population = population;
         this.generations = generations;
         this.crossoverRate = crossoverRate;
         this.mutationRate = mutationRate;
+        this.tournamentSize = 0;
     }
+
+    public GA(Population population, int generations,double crossoverRate, double mutationRate,int tournamentSize){
+        this.population = population;
+        this.generations = generations;
+        this.crossoverRate = crossoverRate;
+        this.mutationRate = mutationRate;
+        this.tournamentSize = tournamentSize;
+    }
+
 
     //roulette operation
     private Schedule roulette(){
