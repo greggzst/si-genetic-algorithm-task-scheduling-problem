@@ -150,15 +150,17 @@ public class Population {
     public double getSumOfInverseDurations(){
         double sum = 0;
         for(int i = 0; i < individualDurations.length; i++){
-            sum += (double) (1 / individualDurations[i]);
+            double inverse = (double) 1 / individualDurations[i];
+            sum += inverse;
         }
         return sum;
     }
 
     private void calculateFitnesses(){
-        int sumOfDurations = getSumOfDurations();
+        double sumOfInverseDurations = getSumOfInverseDurations();
         for (int i = 0; i < individualDurations.length; i++){
-            individualFitnesses[i] = (double) individualDurations[i] / sumOfDurations;
+            double durationInverse = (double) 1 / individualDurations[i];
+            individualFitnesses[i] =  durationInverse  / sumOfInverseDurations;
         }
     }
 }
