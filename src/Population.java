@@ -147,6 +147,14 @@ public class Population {
         return sum;
     }
 
+    public double getSumOfInverseDurations(){
+        double sum = 0;
+        for(int i = 0; i < individualDurations.length; i++){
+            sum += (double) (1 / individualDurations[i]);
+        }
+        return sum;
+    }
+
     private void calculateFitnesses(){
         int sumOfDurations = getSumOfDurations();
         for (int i = 0; i < individualDurations.length; i++){
