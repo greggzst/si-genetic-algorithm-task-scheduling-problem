@@ -6,6 +6,8 @@ import msrcpsp.scheduling.Schedule;
 import msrcpsp.scheduling.Task;
 import msrcpsp.scheduling.greedy.Greedy;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -127,7 +129,7 @@ public class Population {
         return baseIndividual.getDuration();
     }
 
-    private int[] sortedIndecies(){
+    private int[] getSortedIndecies(){
         int[] sortedIndecies = new int[populationSize];
         int[] durations = new int[populationSize];
         for(int i = 0; i < populationSize; i++){
@@ -188,9 +190,23 @@ public class Population {
 
     private void calculateRouletteRange(){
         double sumOfInverseDurations = getSumOfInverseDurations();
-        for (int i = 0; i < individualDurations.length; i++){
-            double durationInverse = (double) 1 / individualDurations[i];
-            individualRouletteRange[i] =  durationInverse  / sumOfInverseDurations;
+        int[] sortedIndecies = getSortedIndecies();
+        HashMap<Integer,Double> rangeValueMap = new HashMap<>();
+
+        for(Integer index : sortedIndecies){
+            double range = (double) 1 / individualDurations[index];
+            range /= sumOfInverseDurations;
+            if(!rangeValueMap.containsKey(individualDurations[index])){
+                rangeValueMap.put(individualDurations[index], range);
+            }else{
+                double currentValue = rangeValueMap.get(individualDurations[index]);
+                rangeValueMap.put(individualDurations[index],range + currentValue);
+            }
         }
+
+        for(Integer index : sortedIndecies){
+            individualRouletteRange[index] = rangeValueMap.get(individualDurations[index]);
+        }
+        
     }
 }
