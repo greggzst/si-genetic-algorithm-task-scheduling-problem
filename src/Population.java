@@ -127,23 +127,34 @@ public class Population {
         return baseIndividual.getDuration();
     }
 
-    private void sortPopulation(){
-        Schedule tempSchedule = null;
+    private int[] sortedIndecies(){
+        int[] sortedIndecies = new int[populationSize];
+        int[] durations = new int[populationSize];
+        for(int i = 0; i < populationSize; i++){
+            sortedIndecies[i] = i;
+            durations[i] = individualDurations[i];
+        }
+        int tempIndex = 0;
         int tempDuration = 0;
-        for(int i=0; i < populationSize; i++){
-            for(int j=1; j < (populationSize-i); j++){
-                if(individualDurations[j-1] > individualDurations[j]){
-                    //swap elements
-                    tempSchedule = individuals[j-1];
-                    individuals[j-1] = individuals[j];
-                    individuals[j] = tempSchedule;
-                    tempDuration = individualDurations[j-1];
-                    individualDurations[j-1] = individualDurations[j];
-                    individualDurations[j] = tempDuration;
+        for(int i = 0; i < populationSize; i++){
+            for(int j = 1; j < (populationSize - i); j++){
+                int firstDuration = durations[j-1];
+                int secondDuration = durations[j];
+                if(firstDuration > secondDuration){
+                    tempDuration = durations[j-1];
+                    durations[j-1] = durations[j];
+                    durations[j] = tempDuration;
+
+                    tempIndex = sortedIndecies[j-1];
+                    sortedIndecies[j-1] = sortedIndecies[j];
+                    sortedIndecies[j] = tempIndex;
                 }
 
             }
         }
+
+        return sortedIndecies;
+
     }
 
     public Schedule[] getIndividuals(){
