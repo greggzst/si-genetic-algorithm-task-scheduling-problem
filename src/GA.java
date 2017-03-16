@@ -56,7 +56,23 @@ public class GA {
     }
 
     private Schedule tournament(){
+        int numberOfIndividuals = 0;
+        Random random = new Random();
+        int[] indices = new int[tournamentSize];
+        while(numberOfIndividuals < tournamentSize){
+            indices[numberOfIndividuals++] = (int) (random.nextDouble() * population.getPopulationSize());
+        }
 
+        int index = indices[0];
+        int duration = population.getIndividualDurations()[indices[0]];
+        for(Integer i : indices){
+            if(duration > population.getIndividualDurations()[i]){
+                index = i;
+                duration = population.getIndividualDurations()[i];
+            }
+        }
+
+        return population.getIndividuals()[index];
     }
 
     //this does all the work
@@ -78,12 +94,19 @@ public class GA {
 
             while(popSize < populationSize){
                 Schedule parent1 = null;
-                while(parent1 == null){
-                    parent1 = roulette();
-                }
                 Schedule parent2 = null;
-                while(parent2 == null){
-                    parent2 = roulette();
+
+                if(tournamentSize == 0){
+                    while(parent1 == null){
+                        parent1 = roulette();
+                    }
+
+                    while(parent2 == null){
+                        parent2 = roulette();
+                    }
+                }else{
+                    parent1 = tournament();
+                    parent2 = tournament();
                 }
 
                 crossover(parent1,parent2);
