@@ -40,7 +40,7 @@ public class GA {
         Schedule schedule = null;
         int populationSize = population.getPopulationSize();
         Schedule[] individuals = population.getIndividuals();
-        double[] fitnesses = population.getIndividualFitnesses();
+        double[] fitnesses = population.getIndividualRouletteRange();
         Random random = new Random();
         double randomNumber = random.nextDouble();
         //loop through all population and rotate roulette if you get the number within approprate
@@ -93,17 +93,14 @@ public class GA {
             int popSize = 0;
 
             while(popSize < populationSize){
+
                 Schedule parent1 = null;
                 Schedule parent2 = null;
 
                 if(tournamentSize == 0){
-                    while(parent1 == null){
-                        parent1 = roulette();
-                    }
+                    parent1 = roulette();
+                    parent2 = roulette();
 
-                    while(parent2 == null){
-                        parent2 = roulette();
-                    }
                 }else{
                     parent1 = tournament();
                     parent2 = tournament();
