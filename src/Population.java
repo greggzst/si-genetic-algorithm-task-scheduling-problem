@@ -207,6 +207,6 @@ public class Population {
         for(Integer index : sortedIndecies){
             individualRouletteRange[index] = rangeValueMap.get(individualDurations[index]);
         }
-        
+
     }
 }
