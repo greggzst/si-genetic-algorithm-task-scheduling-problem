@@ -32,7 +32,7 @@ public class AlgorithmUsage {
         pop.initializeRandomPopulation();
         pop.getSumOfInverseDurations();
 
-        GA ga = new GA(pop, 100, 0.1,0.01, 5);
+        GA ga = new GA(pop, 100, 0.1,0.01);
         Schedule schedule = ga.start();
         BaseValidator validator = new CompleteValidator();
         System.out.println(validator.validate(schedule));
