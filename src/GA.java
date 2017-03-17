@@ -54,7 +54,7 @@ public class GA {
             }
         }
 
-        return schedule != null ? schedule : individuals[populationSize - 1];
+        return schedule != null ? new Schedule(schedule) : new Schedule(individuals[populationSize - 1]);
     }
 
     private Schedule tournament(){
@@ -74,7 +74,7 @@ public class GA {
             }
         }
 
-        return population.getIndividuals()[index];
+        return new Schedule(population.getIndividuals()[index]);
     }
 
     //this does all the work
@@ -83,9 +83,9 @@ public class GA {
         int populationSize = population.getPopulationSize();
 
         System.out.println("Początkowa populacja: ");
-        System.out.println("Sredni czas harmonogramu: " + population.getAverageDuration());
-        System.out.println("Czas najlepszego harmonogramu: " + population.getBestDuration());
-        System.out.println("Czas najgorszego harmonogramu: " + population.getWorstDuration());
+        System.out.print(population.getBestDuration() + " ");
+        System.out.print(population.getWorstDuration() + " ");
+        System.out.print(population.getAverageDuration());
         System.out.println();
 
         //loop until we reach number of given generations
@@ -117,10 +117,10 @@ public class GA {
 
             population = new Population(newPopulation);
 
-            System.out.println("Pokolenie nr: " + (genNum + 1));
-            System.out.println("Sredni czas harmonogramu: " + population.getAverageDuration());
-            System.out.println("Czas najlepszego harmonogramu: " + population.getBestDuration());
-            System.out.println("Czas najgorszego harmonogramu: " + population.getWorstDuration());
+            //System.out.println("Pokolenie nr: " + (genNum + 1));
+            System.out.print(population.getBestDuration() + " ");
+            System.out.print(population.getWorstDuration() + " ");
+            System.out.print(population.getAverageDuration());
             System.out.println();
 
             genNum++;
@@ -155,12 +155,6 @@ public class GA {
 
             firstParent.setTasks(firstAfterCrossover);
             secondParent.setTasks(secondAfterCrossover);
-
-            Greedy greedyFirst = new Greedy(firstParent.getSuccesors());
-            greedyFirst.buildTimestamps(firstParent);
-
-            Greedy greedySecond = new Greedy(secondParent.getSuccesors());
-            greedySecond.buildTimestamps(secondParent);
         }
 
     }
@@ -186,9 +180,6 @@ public class GA {
                 tasks[i].setResourceId(capableResources.get((int)(random.nextDouble() * upperBounds[i])).getId());
             }
         }
-
-        Greedy greedy = new Greedy(schedule.getSuccesors());
-        greedy.buildTimestamps(schedule);
     }
 
     //find crossover point

@@ -37,6 +37,8 @@ public class Population {
         individualDurations = new int[individuals.length];
         individualFitnesses = new double[individuals.length];
         for (int i = 0; i < individuals.length; i++){
+            initializeTaskTime(individuals[i]);
+            individuals[i].setEvaluator(new DurationEvaluator(individuals[i]));
             individualDurations[i] = calculateIndividualDuration(individuals[i]);
         }
         calculateFitnesses();
